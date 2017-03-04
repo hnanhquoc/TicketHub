@@ -3,7 +3,7 @@
 **Name of your app** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
 
 - Submitted by: **Your Name Here**
-- Time spent: **X** hours
+- Time spent: **1,5** hours
 - URL: **Insert your Heroku URL here**
 - SimpleCov Test Coverage: [coverage/index.html](coverage/index.html)
 
@@ -69,7 +69,8 @@ The person with best test coverage will win a small present from the instructor 
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+* When should use **require 'rails_helper'**
+* rspec run very slow.
 
 ## License
 
