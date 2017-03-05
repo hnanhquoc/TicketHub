@@ -6,7 +6,7 @@
 	<li class="nav-item dropdown">
         <%= link_to 'Events', edit_user_registration_path, {'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'class' => 'nav-link dropdown-toggle'} %>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <%= link_to 'My Events', edit_user_registration_path, :class => 'dropdown-item' %>
+          <%= link_to 'My Events', mine_events_path, :class => 'dropdown-item' %>
           <%= link_to 'New Event', new_event_path, :class => 'dropdown-item' %>
         </div>
   	</li>

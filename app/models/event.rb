@@ -14,6 +14,11 @@ class Event < ActiveRecord::Base
 		where("starts_at > ?", Time.now).published
 	end
 
+	def publish!
+		published_at = Time.now
+		save!
+	end
+
 	def self.published
 		where.not(published_at: nil)
 	end

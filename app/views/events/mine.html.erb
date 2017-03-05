@@ -1,0 +1,19 @@
+<div style="margin-top: 80px;">
+	<h1>My events</h1>
+</div>
+<div class="container-fluid events-list">
+  <% if @events.nil? || @events.empty? %>
+  <div class="text-justify">
+    <h2><strong>Opps...</strong></h2>
+    <h5>You don't have any events, <%= link_to 'create one', new_event_path %> and come back...</h5>
+  </div>
+  <% else %>
+  <% @events.in_groups_of(3) do |g| %>
+  <div class="row">
+    <% g.compact.each do |e| %>
+    <%= render partial: 'card', locals: {event: e} %>
+    <% end %>
+  </div>  
+  <% end %>
+  <% end %>
+</div>
