@@ -12,12 +12,32 @@
 body {
   font-family: 'Open Sans';
 }
-.btn.btn-danger {
-  background-color: rgb(216, 87, 66);
-  border: 2px solid rgb(241, 112, 91);
-}
+// .btn.btn-danger {
+//   background-color: rgb(216, 87, 66);
+//   border: 2px solid rgb(241, 112, 91);
+// }
 
 abbr {
     vertical-align: super;
     font-size: xx-small;
+}
+
+.full-width-group-3.btn-group {
+	width: 100%;
+}
+.full-width-group-3 .btn {
+	width: 33.3333%;
+	text-align: center;
+}
+
+.collapse .input-group {
+	margin-bottom: 5px;
+}
+
+.collapse .input-group-addon {
+	width: 33.3333%
+}
+
+.col-sm-6.card.card-block {
+	margin: 10px;
 }

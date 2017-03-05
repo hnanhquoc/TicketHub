@@ -27,4 +27,9 @@ class Event < ActiveRecord::Base
 		where("name ILIKE ?", "%#{search}%") 
 	end
 
+	delegate :name, to: :venue, allow_nil: true, prefix: true
+	delegate :full_address, to: :venue, allow_nil: true, prefix: true
+
+	delegate :region_id, to: :venue, allow_nil: true, prefix: true
+
 end

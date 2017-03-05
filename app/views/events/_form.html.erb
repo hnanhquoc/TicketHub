@@ -1,45 +1,88 @@
 <%= simple_form_for(@event) do |f| %>
+<div class="row">
+	<div class="col-sm-6">
+		<div class="card card-block">
+			<div class="form-group">
+				<%= f.label :category_id %>
+				<%= f.select(:category_id, Category.all.map{|e| [e.name, e.id]}, {}, {'class' => 'form-control'}) %>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="form-group field">
+						<%= f.label :starts_at %>
+						<%= f.text_field :starts_at, {'placeholder' => 'Click to choose your time', 'class' => 'form-control'} %>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="form-group">
+						<%= f.label :ends_at %>
+						<%= f.text_field :ends_at, {'placeholder' => 'Click to choose your time', 'class' => 'form-control'} %>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<%= f.label :venue_id %>
+				<div class="input-group">
+					<%= f.select(:venue_id, ['New Venue'] + Venue.all.map{|e| [e.name, e.id]}, {}, {'class' => 'form-control'}) %>
+					<span class="input-group-btn">
+						<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#newVenueForm" aria-expanded="false" aria-controls="newVenueForm">New</button>
+					</span>
+				</div>
+			</div>
+			<div class="collapse" id="newVenueForm">
+				<div class="card card-block">
+					<div class="input-group">
+						<span class="input-group-addon">Region</span>
+						<%= f.select(:venue_region_id, Region.all.map{|e| [e.name, e.id]}, {},{'class' => 'form-control'}) %>
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon">Venue Name</span>
+						<input type="text" class="form-control" placeholder="Venue Name" name="venue_name">
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon">Full Address</span>
+						<input type="text" class="form-control" placeholder="Address" name="venue_full_address">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-<div class="form-group">
-	<%= f.label :name %>
-	<%= f.text_field :name, {'aria-describedby' => 'emailHelp', 'placeholder' => 'Enter your event name here', 'class' => 'form-control'} %>
-</div>
-<div class="form-group">
-	<%= f.label :hero_image_url %>
-	<%= f.text_field :hero_image_url, {'aria-describedby' => 'emailHelp', 'placeholder' => 'Enter your event name here', 'class' => 'form-control'} %>
-</div>
+	<div class="col-sm-6">
+		<div class="card card-block">
+			<div class="form-group">
+				<%= f.label :name %>
+				<%= f.text_field :name, {'aria-describedby' => 'emailHelp', 'placeholder' => 'Enter your event name here', 'class' => 'form-control'} %>
+			</div>
+			<div class="form-group">
+				<%= f.label :hero_image_url %>
+				<%= f.text_field :hero_image_url, {'aria-describedby' => 'emailHelp', 'placeholder' => 'Enter your event name here', 'class' => 'form-control'} %>
+			</div>
 
-<div class="form-group">
-	<%= f.label 'Description' %>
-	<%= f.text_area :extended_html_description, {'aria-describedby' => 'emailHelp', 'placeholder' => 'Enter your event name here', 'class' => 'form-control'} %>
-</div>
-
-<div class="form-group">
-	<%= f.label :category_id %>
-	<%= f.select(:category_id, Category.all.map{|e| [e.name, e.id]}, {}, {'class' => 'form-control'}) %>
-</div>
-
-<div class="form-group">
-	<%= f.label :venue_id %>
-	<div class="input-group">
-		<%= f.select(:venue_id, Venue.all.map{|e| [e.name, e.id]}, {}, {'class' => 'form-control'}) %>
-		<span class="input-group-btn">
-			<button class="btn btn-primary" type="button">New</button>
-		</span>
+			<div class="form-group">
+				<%= f.label 'Description' %>
+				<%= f.text_area :extended_html_description, {'aria-describedby' => 'emailHelp', 'placeholder' => 'Enter your event name here', 'rows' => '10', 'class' => 'form-control'} %>
+			</div>
+		</div>
 	</div>
 </div>
 
-<div class="form-group field">
-	<%= f.label :starts_at %>
-	<%= f.text_field :starts_at, {'placeholder' => 'Click to choose your time', 'class' => 'form-control'} %>
+
+<div class="card card-block">
+	<table id="ticketTypeTable" class=" table order-list">
+		<thead>
+			<tr>
+				<td colspan="5" style="text-align: left;">
+					<input type="button" class="btn btn-outline-primary btn-block " id="addrow" value="Add More Ticket Type" />
+				</td>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
 </div>
 
-<div class="form-group">
-	<%= f.label :ends_at %>
-	<%= f.text_field :ends_at, {'placeholder' => 'Click to choose your time', 'class' => 'form-control'} %>
-</div>
 
-<div class="form-actions">
-<%= f.button :submit, class: 'btn btn-outline-success'%>
+<div class="form-actions pull-right">
+	<%= f.button :submit, {:class => 'btn btn-outline-success'}%>
 </div>
 <% end %>

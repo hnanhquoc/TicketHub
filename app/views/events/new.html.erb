@@ -1,8 +1,15 @@
+<%= stylesheet_link_tag "progress-step" %>
+
 <div class="container-fluid" style="padding-top: 56px;">
-	<h1>New Event</h1>
-	<div class="row">
-		<div class="col-sm-8">
-			<%= render 'form', event: @event %>
-		</div>
+	<!-- <h1>New Event</h1> -->
+	<!-- Progress bar -->
+	<div class="row no-pad">
+		<ol class="breadcrumb">
+    		<li class="active"><a>Event Details</a></li>
+			<li class=""><a>Publish</a></li>
+			<li class=""><a>Summary</a></li>
+		</ol>
 	</div>
+	<!-- Form  -->
+	<%= render 'form', event: @event %>
 </div>
