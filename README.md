@@ -3,7 +3,7 @@
 **Name of your app** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
 
 - Submitted by: **Your Name Here**
-- Time spent: **3,5** hours
+- Time spent: **8** hours
 - URL: **Insert your Heroku URL here**
 - SimpleCov Test Coverage: [coverage/index.html](coverage/index.html)
 
@@ -18,13 +18,8 @@ The person with best test coverage will win a small present from the instructor 
 
 #### Events
 
-* [ ] Users can see a list of upcoming events. Past events should not be shown.
-    * **HINT**: Good candidate for a test. You can write test first --> fail --> fast similar to demo
-    * Suggestions:
-        * Implement `/upcoming` route test to go to 'events#index'
-        * Implement `Event.upcoming` class method (with a test)
-        * Implement `EventsController#index` action test
-* [ ] Users can search for events from the homepage.
+* [x] Users can see a list of upcoming events. Past events should not be shown.
+* [x] Users can search for events from the homepage.
 * [ ] Users can click on an event to see details about the event.
 * [ ] Users can click on "Book Now" to go to a page to purchase tickets.
 
@@ -66,6 +61,10 @@ The person with best test coverage will win a small present from the instructor 
 * [ ] Ticket types have an optional "minimum" purchase quantity. ([Example Screenshot](http://i.imgur.com/DOYtAR0.png))
 * [ ] Events are automatically labeled as "Hot". "Hot" events should have a red border or some sort of visual flourish. The event title should also be prefixed with "**HOT:**".
 * [ ] Instead of showing all of the events on the main page, an "admin" user can dictate the events that show up on the main page.
+
+### My Stories
+
+* [x] Have current events section
 
 ## Notes
 
