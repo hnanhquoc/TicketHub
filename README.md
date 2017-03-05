@@ -1,6 +1,6 @@
-# Homework 3 - *CoderTicket*
+# Homework 3 - *TiketHub*
 
-**CoderTicket** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
+**TiketHub** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
 
 - Submitted by: **Quoc**
 - Time spent: **15,5** hours
@@ -81,7 +81,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2017] [Quoc]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
