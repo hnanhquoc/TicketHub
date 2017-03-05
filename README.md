@@ -3,8 +3,8 @@
 **CoderTicket** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
 
 - Submitted by: **Quoc**
-- Time spent: **10,5** hours
-- URL: **Insert your Heroku URL here**
+- Time spent: **15,5** hours
+- URL: **https://tikethub.herokuapp.com**
 - SimpleCov Test Coverage: [coverage/index.html](coverage/index.html)
 
 ## User Stories
@@ -65,6 +65,14 @@ The person with best test coverage will win a small present from the instructor 
 ### My Stories
 
 * [x] Have current events section
+
+## Video Walkthrough 
+
+Here's a walkthrough of implemented user stories:
+
+![Video Walkthrough](walkthrough.gif)
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
