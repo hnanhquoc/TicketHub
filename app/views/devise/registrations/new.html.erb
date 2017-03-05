@@ -1,17 +1,33 @@
-<h2>Sign up</h2>
+<%= stylesheet_link_tag "signin" %>
+<!-- <%= render "devise/shared/links" %> -->
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<div class="container">
+	<div class="card card-container">
+		<!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+		<img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+		<p id="profile-name" class="profile-name-card"></p>
+		<h2 style="text-align: center;">Sign Up</h2>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-  </div>
+		<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  		<%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+		<span id="reauth-email" class="reauth-email"></span>
+		
+		<%= f.input :email, required: true, autofocus: true, class: 'form-control', :input_html => {
+			:id => "inputEmail",
+			:placeholder => "Email address"
+		} %>
 
-<%= render "devise/shared/links" %>
+		<%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class: 'form-control', :input_html => {
+			:id => 'inputPassword',
+			:placeholder => 'Password'
+		} %>
+		<%= f.input :password_confirmation, required: true, class: 'form-control' %>
+		
+		<%= f.button :submit, "Sign Up", class: 'btn btn-lg btn-success btn-block btn-signup', :input_html => {
+			:placeholder => 'Password'
+		} %>
+		<%= render "devise/shared/links" %>
+		<% end %><!-- /form -->
+	</div><!-- /card-container -->
+</div><!-- /container -->

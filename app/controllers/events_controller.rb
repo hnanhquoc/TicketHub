@@ -1,10 +1,15 @@
 class EventsController < ApplicationController
+	skip_before_action :authenticate_user!, only: [:index, :show]
   def index
   	if params[:search]
   		@events = Event.search(params[:search]).order("starts_at DESC")
   	else
     	@events = Event.current.order("starts_at DESC") + Event.upcoming.order("starts_at DESC")
     end
+  end
+
+  def new
+    
   end
 
   def edit

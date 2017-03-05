@@ -1,8 +1,8 @@
-# Homework 3 - *Name of App*
+# Homework 3 - *CoderTicket*
 
-**Name of your app** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
+**CoderTicket** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
 
-- Submitted by: **Your Name Here**
+- Submitted by: **Quoc**
 - Time spent: **8** hours
 - URL: **Insert your Heroku URL here**
 - SimpleCov Test Coverage: [coverage/index.html](coverage/index.html)
@@ -20,8 +20,8 @@ The person with best test coverage will win a small present from the instructor 
 
 * [x] Users can see a list of upcoming events. Past events should not be shown.
 * [x] Users can search for events from the homepage.
-* [ ] Users can click on an event to see details about the event.
-* [ ] Users can click on "Book Now" to go to a page to purchase tickets.
+* [x] Users can click on an event to see details about the event.
+* [x] Users can click on "Book Now" to go to a page to purchase tickets.
 
 #### Tickets
 
@@ -32,8 +32,8 @@ The person with best test coverage will win a small present from the instructor 
 
 #### Users
 
-* [ ] User can sign up by providing their email, password, and name.
-* [ ] User can login using an email and password.
+* [x] User can sign up by providing their email, password, and name.
+* [x] User can login using an email and password.
 * [ ] Users can create events.
 * [ ] Users must click "publish event" before an event becomes viewable to other users.
     * **HINT**: use `published_at:datetime` and `Event.published` scope (class method)

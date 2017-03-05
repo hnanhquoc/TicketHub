@@ -7,7 +7,7 @@
   </div>
 </div>
 <div class="container-fluid events-list">
-  <% if @events.empty? %>
+  <% if @events.nil? || @events.empty? %>
   <div class="text-justify">
     <h2><strong>Opps...</strong></h2>
     <h5>Currently, there's no event here. Please come back later!</h5>

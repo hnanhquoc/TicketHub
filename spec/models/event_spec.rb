@@ -60,4 +60,5 @@ RSpec.describe Event, type: :model do
       expect(Event.current).to match_array [b]
     end
   end
+
 end

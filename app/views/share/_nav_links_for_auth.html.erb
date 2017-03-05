@@ -1,0 +1,39 @@
+	<% if user_signed_in? %>
+	<p class="pull-right" style="color: lightyellow;">
+	Logged in as <strong><%= current_user.email %></strong>.
+	</p>
+	<!-- Event -->
+	<li class="nav-item dropdown">
+        <%= link_to 'Events', edit_user_registration_path, {'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'class' => 'nav-link dropdown-toggle'} %>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to 'My Events', edit_user_registration_path, :class => 'dropdown-item' %>
+          <%= link_to 'New Event', new_event_path, :class => 'dropdown-item' %>
+        </div>
+  	</li>
+
+	<!-- Ticket -->
+	<li class="nav-item dropdown">
+        <%= link_to 'Tickets', edit_user_registration_path, {'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'class' => 'nav-link dropdown-toggle'} %>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to 'My Tickets', edit_user_registration_path, :class => 'dropdown-item' %>
+          <%= link_to 'New Ticket Types', edit_user_registration_path, :class => 'dropdown-item' %>
+        </div>
+  	</li>
+
+	<li class="nav-item pull-right">
+		<%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link' %>
+	</li>
+	
+	<li class="nav-item pull-right">
+		<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
+	</li>
+
+
+	<% else %>
+	<li class="nav-item">
+		<%= link_to "Sign up", new_user_registration_path, :class => 'nav-link'  %> 
+	</li>
+	<li class="nav-item">
+		<%= link_to "Login", new_user_session_path, :class => 'nav-link'  %>
+	</li>
+	<% end %>
