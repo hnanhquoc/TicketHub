@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'orders/new'
+
+  get 'orders/create'
+
   devise_for :users
   get 'upcoming' => 'events#index'
   root 'events#index'
@@ -10,7 +14,11 @@ Rails.application.routes.draw do
     member do
       post 'publish'
     end
-    resources :tickets
+    resources :tickets do
+      member do
+        post 'buy'
+      end
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

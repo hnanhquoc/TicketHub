@@ -29,19 +29,24 @@
         <th> Quantity </th>
       
         <% @event.ticket_types.each do |type| %>
-        <tr>
-          <td> <%= type.name %> </td>
-          <td> <%= number_to_currency(type.price, unit: 'VND ', precision: 0) %> </td>
-          <td> <%= select_tag('quantity', options_for_select(0..10)) %></td> 
-        </tr>
-        <% end %> 
+        
+          <tr>
+            <%= form_tag buy_event_ticket_path(@event.id, type.id) do %>        
+              <td> <%= type.name %> </td>
+              <td> <%= number_to_currency(type.price, unit: 'VND ', precision: 0) %> </td>
+              <% if type.max_quantity > 0 %>
+              <td> <%= select_tag('quantity', options_for_select(type.max_quantity > 10 ? 1..10 : 1..type.max_quantity),{class: 'form-control'}) %></td> 
+              <td><%= submit_tag 'Buy', class: 'btn btn-success btn-block' %></td>
+              <% else %>
+              <td><strong>Sold Out</strong></td>
+              <% end %> 
+              
+            <% end %>
+          </tr>
+        <% end %>
+        
       </table>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-2 col-md-offset-5">
-      <button class="btn btn-success btn-lg btn-block"> Buy </button>
-    </div>
-  <div>
 </div>  
 
