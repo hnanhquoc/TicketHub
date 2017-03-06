@@ -11,12 +11,12 @@
     </div>
     <div class="card-footer" style="padding: 0;">
       <div class="full-width-group-3 btn-group" role="group">
-        <button type="button" class="btn btn-warning">Edit</button>
-        
+        <%= link_to "Edit", edit_event_path(event.id), method: 'GET', class: 'btn btn-warning' %>
+
         <% if event.published? %>
         <button type="button" class="btn btn-primary" disabled>Publish</button>
         <% else %>
-        <%= button_to "Publish", publish_event_path(event.id), {data: { disable_with: "Please wait..."}, type: 'button', form_class: 'btn btn-primary', class: 'active'} %>
+        <%= button_to "Publish", publish_event_path(event.id), {data: { disable_with: "..."}, type: 'button', form_class: 'btn btn-primary', class: 'active'} %>
         <% end %>
 
         <button type="button" class="btn btn-danger" disabled>Delete</button>

@@ -1,6 +1,17 @@
-<h1>Editing Event</h1>
+<%= stylesheet_link_tag "progress-step" %>
 
-<%= render 'form', event: @event %>
-
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+<div class="container-fluid" style="padding-top: 56px;">
+	<!-- Progress bar -->
+	<div class="row no-pad">
+		<ol class="breadcrumb">
+    		<li class="completed"><a>Event Details</a></li>
+			<li class="active"><a>Update</a></li>
+			<li class=""><a>Publish</a></li>
+			<!-- <li class=""><a>Summary</a></li> -->
+		</ol>
+	</div>
+	<!-- Form  -->
+	<%= render 'form', event: @event %>
+	<%= link_to 'Show', @event %> |
+	<%= link_to 'Back', events_path %>
+</div>

@@ -77,7 +77,29 @@
 				</td>
 			</tr>
 		</thead>
-		<tbody></tbody>
+		<tbody>
+			<% if !@ticket_types.nil? && !@ticket_types.empty? %>
+				<% @ticket_types.each do |t| %>
+				<tr>
+					<td class="col-sm-5">
+						<input type="text" required="true" class="form-control" placeholder="Ticket Type Name" name="ticket_types[<%= dom_id(t) %>]name" value="<%= t.name %>">
+					</td>
+
+					<td class="col-sm-3">
+						<input type="text" required="true" class="form-control" placeholder="Ticket Price" name="ticket_types[<%= dom_id(t) %>]price" value="<%= t.price %>">
+					</td>
+
+					<td class="col-sm-2">
+						<input type="text" required="true" class="form-control" placeholder="Amount" name="ticket_types[<%= dom_id(t) %>]max_quantity" value="<%= t.max_quantity %>">
+					</td>
+
+					<td class="col-sm-2">
+						<input type="button" class="ibtnDel btn btn-md btn-danger " value="Delete">
+					</td>
+				</tr>
+				<% end %>
+			<% end %>
+		</tbody>
 	</table>
 </div>
 

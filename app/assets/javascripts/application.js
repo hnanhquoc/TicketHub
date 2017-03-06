@@ -24,9 +24,9 @@ $(document).ready(function () {
         var newRow = $("<tr>");
         var cols = "";
 
-        cols += '<td class="col-sm-5"><input type="text" class="form-control" placeholder="Ticket Type Name" name="ticket_types[' + counter + ']name"/></td>';
-        cols += '<td class="col-sm-3"><input type="text" class="form-control" placeholder="Ticket Price" name="ticket_types[' + counter + ']price"/></td>';
-        cols += '<td class="col-sm-2"><input type="text" class="form-control" placeholder="Amount" name="ticket_types[' + counter + ']max_quantity"/></td>';
+        cols += '<td class="col-sm-5"><input type="text" required="true" class="form-control" placeholder="Ticket Type Name" name="ticket_types[' + counter + ']name"/></td>';
+        cols += '<td class="col-sm-3"><input type="text" required="true" class="form-control" placeholder="Ticket Price" name="ticket_types[' + counter + ']price"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" required="true" class="form-control" placeholder="Amount" name="ticket_types[' + counter + ']max_quantity"/></td>';
 
         cols += '<td class="col-sm-2"><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
         newRow.append(cols);
