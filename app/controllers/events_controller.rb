@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
 	skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :check_event_changing_permission, only: [:publish, :edit]
+
   def index
   	if params[:search]
   		@events = Event.search(params[:search]).order("starts_at DESC")
@@ -8,9 +10,9 @@ class EventsController < ApplicationController
    end
  end
 
-  def new
-    @event = Event.new
-  end
+ def new
+  @event = Event.new
+end
 
 def create
   if params[:event][:venue_id] == 'New Value'
@@ -36,7 +38,7 @@ def create
       TicketType.create! event_id: @event.id, name: t[:name], price: t[:price], max_quantity: t[:max_quantity]
     end
     flash[:success] = "Event created successful!"
-    redirect_to events_path
+    redirect_to mine_events_path
   else
     flash[:error] = "Error: #{@event.errors.full_messages.to_sentence}"
     render 'new'
@@ -53,8 +55,32 @@ def edit
 end
 end
 
+def publish
+  if params[:id]
+    @event = Event.find(params[:id])
+    if !@event.published?
+    @event.publish!
+    flash[:success] = "Event published successful!"
+  else
+    flash[:notice] = "Event published already!"
+  end
+    redirect_to mine_events_path
+  else
+    flash[:error] = "Select an event to publish"
+    render 'mine'
+  end
+end
+
 def show
   @event = Event.find(params[:id])
+end
+
+def check_event_changing_permission
+  @event = Event.find(params[:id])
+  unless @event.created_by == current_user.email
+    flash[:error] = "You're not authorized to do this action"
+    redirect_to events_path
+  end
 end
 
 def event_params

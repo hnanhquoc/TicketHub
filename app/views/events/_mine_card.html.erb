@@ -1,21 +1,27 @@
 <div class="col-md-6">
-    <div class="card">
-      <div class="card-header">
-        <p class="card-text">Created at: <%= event.created_at.strftime('%d %b %Y %l:%M %p') %></p>
-      </div>
-      <img class="card-img-top" src="<%= event.hero_image_url %>">
-      <div class="card-block">
-        <h4 class="card-title"><%= event.name %></h4>
-        <p class="card-text"><%= event.extended_html_description.html_safe %>
-        </p>
-      </div>
-      <div class="card-footer" style="padding: 0;">
-        <div class="full-width-group-3 btn-group" role="group">
-        <button type="button" class="btn btn-warning">Edit</button>
-        <button type="button" class="btn btn-primary">Publish</button>
-        <button type="button" class="btn btn-danger">Delete</button>
-      </div>
-      </div>
-      
+  <div class="card">
+    <div class="card-header">
+      <p class="card-text">Created at: <%= event.created_at.strftime('%d %b %Y %l:%M %p') %></p>
     </div>
+    <img class="card-img-top" src="<%= event.hero_image_url %>">
+    <div class="card-block">
+      <h4 class="card-title"><%= event.name %></h4>
+      <p class="card-text"><%= event.extended_html_description.html_safe %>
+      </p>
+    </div>
+    <div class="card-footer" style="padding: 0;">
+      <div class="full-width-group-3 btn-group" role="group">
+        <button type="button" class="btn btn-warning">Edit</button>
+        
+        <% if event.published? %>
+        <button type="button" class="btn btn-primary" disabled>Publish</button>
+        <% else %>
+        <%= button_to "Publish", publish_event_path(event.id), {data: { disable_with: "Please wait..."}, type: 'button', form_class: 'btn btn-primary', class: 'active'} %>
+        <% end %>
+
+        <button type="button" class="btn btn-danger" disabled>Delete</button>
+      </div>
+    </div>
+
+  </div>
 </div>  

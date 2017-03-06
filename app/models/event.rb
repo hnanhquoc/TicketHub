@@ -15,8 +15,12 @@ class Event < ActiveRecord::Base
 	end
 
 	def publish!
-		published_at = Time.now
+		self.published_at = Time.now
 		save!
+	end
+
+	def published?
+		return !published_at.nil?
 	end
 
 	def self.published

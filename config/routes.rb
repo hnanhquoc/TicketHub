@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     collection do
       get 'mine'
     end
+    member do
+      post 'publish'
+    end
     resources :tickets
   end
   # The priority is based upon order of creation: first created -> highest priority.
