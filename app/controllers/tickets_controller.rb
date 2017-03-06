@@ -38,6 +38,10 @@ class TicketsController < ApplicationController
 		end
 	end
 
+	def mine
+		@orders = Order.where("email = ?", current_user.email)
+	end
+
 	def ticket_params
 		params.require(:ticket).permit(:id, :event_id, :quantity)
 	end

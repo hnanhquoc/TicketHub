@@ -1,0 +1,33 @@
+<div style="margin-top: 80px;">
+	<h1>My tickets</h1>
+</div>
+<div class="container-fluid events-list">
+  <% if @orders.nil? || @orders.empty? %>
+  <div class="text-justify">
+    <h2><strong>Opps...</strong></h2>
+    <h5>You don't have any tickets booked yet,...</h5>
+  </div>
+
+  <% else %>
+      <div class="col-md-11 col-md-offset-1">  
+        <table class="table">
+          <th> Event </th>
+          <th> Ticket Type </th>
+          <th> Unit Price </th>
+          <th> Quantity </th>
+        
+          <% @orders.each do |order| %>
+          
+            <tr>
+                <td> <%= order.ticket_type.event.name %> </td>       
+                <td> <%= order.ticket_type.name %> </td>
+                <td> <%= number_to_currency(order.ticket_type.price, unit: 'VND ', precision: 0) %> </td>
+                <td><strong><%= order.quantity %></strong></td>
+            </tr>
+          <% end %>
+          
+        </table>
+      </div>
+
+  <% end %>
+</div>

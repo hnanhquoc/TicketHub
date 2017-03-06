@@ -12,12 +12,9 @@
   	</li>
 
 	<!-- Ticket -->
-	<li class="nav-item dropdown">
-        <%= link_to 'Tickets', edit_user_registration_path, {'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'class' => 'nav-link dropdown-toggle'} %>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <%= link_to 'My Tickets', edit_user_registration_path, :class => 'dropdown-item' %>
-          <%= link_to 'New Ticket Types', edit_user_registration_path, :class => 'dropdown-item' %>
-        </div>
+	<li class="nav-item">
+		<%= link_to 'My Tickets', myticket_path, :class => 'nav-link' %>
+        
   	</li>
 
 	<li class="nav-item pull-right">

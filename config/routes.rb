@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
+  
   get 'orders/new'
-
-  get 'orders/create'
-
+  get 'myticket' => 'tickets#mine'
   devise_for :users
   get 'upcoming' => 'events#index'
   root 'events#index'
