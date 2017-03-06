@@ -3,7 +3,7 @@
 **TiketHub** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
 
 - Submitted by: **Quoc**
-- Time spent: **21** hours
+- Time spent: **25,5** hours
 - URL: **https://tikethub.herokuapp.com**
 - SimpleCov Test Coverage: [coverage/index.html](coverage/index.html)
 
